@@ -1,0 +1,206 @@
+
+/* ================================
+   GLOBAL VARIABLES
+   ================================ */
+
+:root {
+    --orange: #FF6900;
+    --teal: #004053;
+    --gold: #FDB71A;
+    --light-black: rgba(0,0,0,0.1);
+
+    --bg: #f4f6f7;
+    --text: #222;
+    --font-main: "Arial", sans-serif;
+}
+
+/* ================================
+   GENERAL PAGE STYLING
+   ================================ */
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    font-family: var(--font-main);
+    color: var(--text);
+    overflow: hidden;
+}
+
+h1, h2 {
+    margin: 0;
+    padding: 10px 0;
+    color: var(--teal);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+h1 { font-size: 38px; }
+h2 { font-size: 30px; margin-top: 20px; }
+
+/* ================================
+   HEADER
+   ================================ */
+
+#header {
+    background: var(--teal);
+    color: white;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#header-buttons button {
+    padding: 10px 16px;
+    font-size: 18px;
+    background: var(--gold);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--teal);
+}
+
+#clock {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+/* ================================
+   MAIN SCROLL AREA (manual ONLY)
+   ================================ */
+
+#scroll-container {
+    height: calc(100vh - 90px);
+    overflow-y: auto;   /* Manual scroll allowed */
+    overflow-x: hidden;
+    padding: 20px 30px;
+}
+
+/* ================================
+   TABLE
+   ================================ */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px var(--light-black);
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+thead {
+    background: var(--orange);
+    color: white;
+}
+
+thead th {
+    padding: 14px;
+    font-size: 20px;
+}
+
+tbody td {
+    padding: 12px;
+    font-size: 22px;
+    text-align: center;
+    border-bottom: 1px solid var(--light-black);
+}
+
+tbody tr:nth-child(even) {
+    background: #fff7f2;
+}
+
+tbody tr:hover {
+    background: #ffe3ce;
+}
+
+.rank-cell {
+    font-weight: bold;
+    color: var(--teal);
+    font-size: 26px;
+}
+
+/* ================================
+   KPI TILES
+   ================================ */
+
+.kpi-tile {
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+
+/* ================================
+   MODALS
+   ================================ */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: white;
+    width: 380px;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--light-black);
+}
+
+.modal-content input,
+.modal-content select {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    margin-top: 5px;
+    margin-bottom: 18px;
+}
+
+.modal-content button {
+    width: 100%;
+    padding: 14px;
+    background: var(--teal);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.delete-btn { background: #b30000 !important; }
+
+.close {
+    float: right;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+/* ================================
+   TV MODE (cursor hide)
+   ================================ */
+
+body.hide-cursor {
+    cursor: none;
+}
