@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>HomeSecure Sales Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <!-- HEADER WITH LOGO + TITLE -->
+    <header id="header">
+
+        <div id="header-left">
+            <img id="hs-logo" src="img/homesecure-logo.png" alt="HomeSecure Logo">
+            <h1>HomeSecure Sales Dashboard</h1>
+        </div>
+
+        <div id="header-buttons">
+            <button id="fullscreen-btn">⛶ Fullscreen</button>
+            <button id="admin-btn">Admin</button>
+            <div id="clock"></div>
+        </div>
+
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main id="scroll-container">
+
+        <!-- KPI ROW -->
+        <section id="kpi-row" class="kpi-row">
+            <div class="kpi-tile" id="kpi-monthly">
+                <div class="kpi-label">Monthly Sales</div>
+                <div id="kpi-monthly-value" class="kpi-value">0</div>
+            </div>
+
+            <div class="kpi-tile" id="kpi-upfront">
+                <div class="kpi-label">Avg Upfront</div>
+                <div id="kpi-upfront-value" class="kpi-value" data-type="money">€0.00</div>
+            </div>
+
+            <div class="kpi-tile" id="kpi-monitoring">
+                <div class="kpi-label">Avg Monitoring</div>
+                <div id="kpi-monitoring-value" class="kpi-value" data-type="money">€0.00</div>
+            </div>
+
+            <div class="kpi-tile" id="kpi-yearly">
+                <div class="kpi-label">Yearly Sales</div>
+                <div id="kpi-yearly-value" class="kpi-value">0</div>
+            </div>
+        </section>
+
+        <!-- ================================
+             CORE TEAM LEADERBOARD
+             ================================ -->
+        <section>
+            <h2>=== CORE TEAM ===</h2>
+
+            <table id="core-team-table">
+                <thead>
+                    <tr>
+                        <th>Agent</th>
+                        <th>Daily</th>
+                        <th>Weekly</th>
+                        <th>Monthly</th>
+                        <th>Avg Upfront €</th>
+                        <th>Avg Monitoring €</th>
+                        <th>Yearly</th>
+                        <th>Rank</th>
+                    </tr>
+                </thead>
+                <tbody id="core-team-body"></tbody>
+            </table>
+        </section>
+
+        <br><br>
+
+        <!-- ================================
+             SWEEP TEAM LEADERBOARD
+             ================================ -->
+        <section>
+            <h2>=== SWEEP TEAM ===</h2>
+
+            <table id="sweep-team-table">
+                <thead>
+                    <tr>
+                        <th>Agent</th>
+                        <th>Daily</th>
+                        <th>Weekly</th>
+                        <th>Monthly</th>
+                        <th>Avg Upfront €</th>
+                        <th>Avg Monitoring €</th>
+                        <th>Yearly</th>
+                        <th>Rank</th>
+                    </tr>
+                </thead>
+                <tbody id="sweep-team-body"></tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <!-- ADMIN MODAL -->
+    <div id="admin-modal" class="modal hidden">
+        <div class="modal-content">
+            <span id="close-admin" class="close">&times;</span>
+            <h2>Admin Login</h2>
+            <input type="password" id="admin-password" placeholder="Enter Password" />
+            <button id="admin-login-btn">Login</button>
+            <p id="admin-error"></p>
+        </div>
+    </div>
+
+    <!-- EDIT MODAL -->
+    <div id="edit-modal" class="modal hidden">
+        <div class="modal-content">
+            <span id="close-edit" class="close">&times;</span>
+            <h2>Edit Sale</h2>
+
+            <label>Agent</label>
+            <select id="edit-agent">
+                <option>Bradley</option>
+                <option>Craig</option>
+                <option>Jamie</option>
+                <option>John</option>
+                <option>Johnny</option>
+                <option>Keith</option>
+                <option>Lar</option>
+                <option>Ross</option>
+                <option>Shane</option>
+            </select>
+
+            <label>Upfront (€)</label>
+            <input id="edit-upfront" type="number" step="0.01" />
+
+            <label>Monitoring (€)</label>
+            <input id="edit-monitoring" type="number" step="0.01" />
+
+            <label>Notes</label>
+            <input id="edit-notes" type="text" />
+
+            <button id="save-edit-btn">Save Changes</button>
+            <button id="delete-sale-btn" class="delete-btn">Delete Sale</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="js/firebase-init.js"></script>
+    <script type="module" src="js/dashboard.js"></script>
+    <script type="module" src="js/admin.js"></script>
+    <script type="module" src="js/tv.js"></script>
+
+</body>
+</html>
